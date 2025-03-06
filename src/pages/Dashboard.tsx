@@ -7,6 +7,7 @@ import { DepartmentHeadDashboard } from '@/components/dashboard/DepartmentHeadDa
 import { AdminDashboard } from '@/components/dashboard/AdminDashboard';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { RoleSwitcher } from '@/components/auth/RoleSwitcher';
 
 const Dashboard = () => {
   const { user, isAuthenticated, isLoading } = useAuth();
@@ -46,6 +47,9 @@ const Dashboard = () => {
       
       <main className="flex-1 py-8 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4">
+          <div className="flex justify-end mb-4">
+            <RoleSwitcher />
+          </div>
           {renderDashboard()}
         </div>
       </main>

@@ -17,6 +17,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (googleUser: any) => void;
   logout: () => void;
+  switchRole: (role: UserRole) => void; // Add role switching function
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -76,13 +77,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('schoolAssistantUser');
   };
 
+  // Add role switching function for demo purposes
+  const switchRole = (role: UserRole) => {
+    if (user) {
+      const updatedUser = { ...user, role };
+      setUser(updatedUser);
+      localStorage.setItem('schoolAssistantUser', JSON.stringify(updatedUser));
+    }
+  };
+
   return (
     <AuthContext.Provider value={{ 
       user, 
       isLoading, 
       isAuthenticated: !!user, 
       login, 
-      logout 
+      logout,
+      switchRole
     }}>
       {children}
     </AuthContext.Provider>
