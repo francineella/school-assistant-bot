@@ -67,6 +67,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundColor: {
+				'light-theme': '#ecf2c7',
+				'dark-theme': '#3b5173',
+			},
+			textColor: {
+				'light-theme': '#333333',
+				'dark-theme': '#ffffff',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',

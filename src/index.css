@@ -7,83 +7,83 @@
 
 @layer base {
   :root {
-    --background: 210 33% 99%;
+    --background: 60 36% 87%;
     --foreground: 222 47% 11%;
 
-    --card: 0 0% 100%;
+    --card: 60 36% 92%;
     --card-foreground: 222 47% 11%;
 
-    --popover: 0 0% 100%;
+    --popover: 60 36% 92%;
     --popover-foreground: 222 47% 11%;
 
     --primary: 210 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 60 36% 82%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96%;
+    --muted: 60 36% 82%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96%;
+    --accent: 60 36% 82%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 60 36% 77%;
+    --input: 60 36% 77%;
     --ring: 222 47% 11%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 210 50% 98%;
+    --sidebar-background: 60 36% 92%;
     --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 210 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent: 60 36% 82%;
     --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 210 40% 90%;
+    --sidebar-border: 60 36% 77%;
     --sidebar-ring: 210 100% 50%;
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 219 33% 34%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 219 33% 28%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 219 33% 28%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 50%;
+    --primary: 219 33% 44%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 33% 17%;
+    --secondary: 219 33% 24%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 219 33% 24%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 217 33% 17%;
+    --accent: 219 33% 24%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 219 33% 22%;
+    --input: 219 33% 22%;
     --ring: 212 27% 84%;
 
-    --sidebar-background: 223 47% 11%;
+    --sidebar-background: 219 33% 28%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary: 219 33% 44%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent: 219 33% 24%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 17%;
-    --sidebar-ring: 210 100% 50%;
+    --sidebar-border: 219 33% 22%;
+    --sidebar-ring: 219 33% 44%;
   }
 }
 
@@ -119,7 +119,7 @@
 @layer components {
   /* Glass Card Effect */
   .glass-card {
-    @apply bg-white/80 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-black/20 shadow-lg;
+    @apply bg-white/80 dark:bg-[#3b5173]/50 backdrop-blur-md border border-white/20 dark:border-[#3b5173]/20 shadow-lg;
   }
   
   /* Animated Link Hover */
