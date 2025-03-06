@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/Card';
+import { CustomCard, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/custom-card';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, BarChart, Star, Clock, ArrowUpRight, Users } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
@@ -55,7 +54,7 @@ export const DepartmentHeadDashboard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
       {/* Welcome Card */}
-      <Card className="md:col-span-12" variant="glass">
+      <CustomCard className="md:col-span-12" variant="glass">
         <CardHeader>
           <CardTitle className="text-xl sm:text-2xl font-medium">Welcome back, Department Head {user?.name.split(' ')[0]}</CardTitle>
         </CardHeader>
@@ -76,7 +75,7 @@ export const DepartmentHeadDashboard = () => {
             View detailed analytics
           </Button>
         </CardFooter>
-      </Card>
+      </CustomCard>
       
       {/* Analytics Cards */}
       <div className="md:col-span-6">
@@ -97,7 +96,7 @@ export const DepartmentHeadDashboard = () => {
       
       {/* Department Head Picks */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <Star size={18} className="mr-2" />
@@ -121,12 +120,12 @@ export const DepartmentHeadDashboard = () => {
           <CardFooter>
             <Button variant="outline" className="w-full text-xs">Manage department picks</Button>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
       
       {/* Recent Departmental Inquiries */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <Users size={18} className="mr-2" />
@@ -157,7 +156,7 @@ export const DepartmentHeadDashboard = () => {
           <CardFooter>
             <Button variant="outline" className="w-full text-xs">View all inquiries</Button>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
     </div>
   );

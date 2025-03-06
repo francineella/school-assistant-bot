@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useToast } from '@/components/ui/use-toast';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/Card';
+import { CustomCard } from '@/components/ui/custom-card';
 import GoogleAuth from '@/components/auth/GoogleAuth';
 import { useAuth } from '@/context/AuthContext';
 import { Header } from '@/components/layout/Header';
@@ -14,7 +13,6 @@ import { MessageSquare, BarChart, ShieldCheck } from 'lucide-react';
 const Index = () => {
   const { isAuthenticated, isLoading } = useAuth();
   
-  // If user is already authenticated, redirect to dashboard
   if (isAuthenticated && !isLoading) {
     return <Navigate to="/dashboard" replace />;
   }
@@ -24,7 +22,6 @@ const Index = () => {
       <Header />
       
       <main className="flex-1">
-        {/* Hero Section */}
         <section className="relative py-12 md:py-24 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
             <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
@@ -108,7 +105,6 @@ const Index = () => {
           </div>
         </section>
         
-        {/* Features Section */}
         <section className="py-16 bg-secondary/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -123,7 +119,7 @@ const Index = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Card variant="hover" className="h-full">
+                <CustomCard variant="hover" className="h-full">
                   <div className="p-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                       <MessageSquare className="text-primary" size={24} />
@@ -133,7 +129,7 @@ const Index = () => {
                       Get instant answers to your questions about school policies, procedures, and events through our intelligent chatbot.
                     </p>
                   </div>
-                </Card>
+                </CustomCard>
               </motion.div>
               
               <motion.div
@@ -142,7 +138,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <Card variant="hover" className="h-full">
+                <CustomCard variant="hover" className="h-full">
                   <div className="p-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                       <BarChart className="text-primary" size={24} />
@@ -152,7 +148,7 @@ const Index = () => {
                       Department heads and administrators can access detailed insights about inquiries and frequently asked questions.
                     </p>
                   </div>
-                </Card>
+                </CustomCard>
               </motion.div>
               
               <motion.div
@@ -161,7 +157,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <Card variant="hover" className="h-full">
+                <CustomCard variant="hover" className="h-full">
                   <div className="p-6">
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                       <ShieldCheck className="text-primary" size={24} />
@@ -171,13 +167,12 @@ const Index = () => {
                       Login securely with your Google account and access personalized information based on your role within the school community.
                     </p>
                   </div>
-                </Card>
+                </CustomCard>
               </motion.div>
             </div>
           </div>
         </section>
         
-        {/* CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <motion.div

@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Plus, MessageSquare } from 'lucide-react';
-import { Card } from '@/components/ui/Card';
+import { CustomCard } from '@/components/ui/custom-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';

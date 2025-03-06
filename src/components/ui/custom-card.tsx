@@ -20,7 +20,7 @@ const paddingVariants = {
   lg: 'p-7',
 };
 
-export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+export const CustomCard = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', padding = 'md', children, ...props }, ref) => {
     return (
       <div
@@ -39,7 +39,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   }
 );
 
-Card.displayName = 'Card';
+CustomCard.displayName = 'CustomCard';
 
 export const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (

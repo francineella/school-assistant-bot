@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/Card';
+import { CustomCard, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/custom-card';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, BarChart, FileText, Users, Upload, Settings } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
@@ -43,7 +42,7 @@ export const AdminDashboard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
       {/* Welcome Card */}
-      <Card className="md:col-span-12" variant="glass">
+      <CustomCard className="md:col-span-12" variant="glass">
         <CardHeader>
           <CardTitle className="text-xl sm:text-2xl font-medium">Admin Dashboard</CardTitle>
         </CardHeader>
@@ -66,7 +65,7 @@ export const AdminDashboard = () => {
             System settings
           </Button>
         </CardFooter>
-      </Card>
+      </CustomCard>
       
       {/* Analytics Cards */}
       <div className="md:col-span-6">
@@ -87,7 +86,7 @@ export const AdminDashboard = () => {
       
       {/* Knowledge Base Documents */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <FileText size={18} className="mr-2" />
@@ -126,12 +125,12 @@ export const AdminDashboard = () => {
               Upload new document
             </Button>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
       
       {/* User Management */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <Users size={18} className="mr-2" />
@@ -167,7 +166,7 @@ export const AdminDashboard = () => {
               Add new user
             </Button>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
     </div>
   );

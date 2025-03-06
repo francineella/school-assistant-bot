@@ -5,7 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { ChatInterface } from '@/components/chat/ChatInterface';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Card } from '@/components/ui/Card';
+import { CustomCard } from '@/components/ui/custom-card';
 
 const Chat = () => {
   const { isAuthenticated, isLoading } = useAuth();
@@ -33,11 +33,11 @@ const Chat = () => {
       
       <main className="flex-1 py-8 bg-gradient-to-b from-background to-secondary/20">
         <div className="container mx-auto px-4">
-          <Card variant="glass" className="overflow-hidden border">
+          <CustomCard variant="glass" className="overflow-hidden border">
             <div className="h-[calc(100vh-12rem)]">
               <ChatInterface />
             </div>
-          </Card>
+          </CustomCard>
         </div>
       </main>
       

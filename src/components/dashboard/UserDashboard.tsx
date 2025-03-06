@@ -1,12 +1,10 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/Card';
+import { CustomCard, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/custom-card';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, Clock, ArrowUpRight } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
-// Same suggested questions from the chat component
 const SUGGESTED_QUESTIONS = [
   { id: '1', text: 'What are the school\'s operating hours?' },
   { id: '2', text: 'What are the requirements to enroll?' },
@@ -21,7 +19,6 @@ interface RecentConversation {
   preview: string;
 }
 
-// Mock data for recent conversations
 const RECENT_CONVERSATIONS: RecentConversation[] = [
   {
     id: '1',
@@ -45,8 +42,7 @@ export const UserDashboard = () => {
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-      {/* Welcome Card */}
-      <Card className="md:col-span-12" variant="glass">
+      <CustomCard className="md:col-span-12" variant="glass">
         <CardHeader>
           <CardTitle className="text-xl sm:text-2xl font-medium">Welcome back, {user?.name.split(' ')[0]}</CardTitle>
         </CardHeader>
@@ -63,11 +59,10 @@ export const UserDashboard = () => {
             </Button>
           </Link>
         </CardFooter>
-      </Card>
+      </CustomCard>
       
-      {/* Recent Conversations */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <Clock size={18} className="mr-2" />
@@ -99,12 +94,11 @@ export const UserDashboard = () => {
               <Button variant="outline" className="w-full text-xs">View all conversations</Button>
             </Link>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
       
-      {/* Popular Topics */}
       <div className="md:col-span-6">
-        <Card className="h-full" variant="default">
+        <CustomCard className="h-full" variant="default">
           <CardHeader>
             <CardTitle className="flex items-center text-lg font-medium">
               <MessageSquare size={18} className="mr-2" />
@@ -129,7 +123,7 @@ export const UserDashboard = () => {
               <Button variant="outline" className="w-full text-xs">View more questions</Button>
             </Link>
           </CardFooter>
-        </Card>
+        </CustomCard>
       </div>
     </div>
   );

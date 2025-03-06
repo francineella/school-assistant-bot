@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
+import { CustomCard, CardHeader, CardTitle, CardContent } from '@/components/ui/custom-card';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface AnalyticsCardProps {
@@ -19,7 +18,7 @@ export const AnalyticsCard: React.FC<AnalyticsCardProps> = ({
   colors = defaultColors 
 }) => {
   return (
-    <Card variant="glass" className="h-full">
+    <CustomCard variant="glass" className="h-full">
       <CardHeader>
         <CardTitle className="text-lg font-medium">{title}</CardTitle>
       </CardHeader>
@@ -86,6 +85,6 @@ export const AnalyticsCard: React.FC<AnalyticsCardProps> = ({
           )}
         </div>
       </CardContent>
-    </Card>
+    </CustomCard>
   );
 };
