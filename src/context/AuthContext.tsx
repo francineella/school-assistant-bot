@@ -17,7 +17,7 @@ interface AuthContextType {
   isAuthenticated: boolean;
   login: (googleUser: any) => void;
   logout: () => void;
-  switchRole: (role: UserRole) => void;
+  switchRole: (role: UserRole) => void; // Add role switching function
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -44,7 +44,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = (googleUser: any) => {
-    // This still determines the role based on email for demo purposes
+    // This is a mock implementation. In a real app, you would:
+    // 1. Verify the Google token on your backend
+    // 2. Get or create the user in your database
+    // 3. Determine their role
+    
+    // For demo purposes, we'll assign roles based on email domain
     const email = googleUser.email;
     let role: UserRole = 'user';
     
@@ -56,7 +61,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
     
     const newUser: User = {
-      id: googleUser.id || googleUser.sub,
+      id: googleUser.sub || googleUser.id,
       name: googleUser.name,
       email: googleUser.email,
       picture: googleUser.picture,
@@ -70,14 +75,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const logout = () => {
     setUser(null);
     localStorage.removeItem('schoolAssistantUser');
-    
-    // Also clear any Google auth session
-    if (window.google?.accounts?.id) {
-      window.google.accounts.id.cancel();
-    }
   };
 
-  // Role switching function for demo purposes
+  // Add role switching function for demo purposes
   const switchRole = (role: UserRole) => {
     if (user) {
       const updatedUser = { ...user, role };
